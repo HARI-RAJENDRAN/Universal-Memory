@@ -1,0 +1,14 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    ports:
+      - "15432:5432"
+    environment:
+      - POSTGRES_USER=mem0
+      - POSTGRES_PASSWORD=mem0
+      - POSTGRES_DB=unimem
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:

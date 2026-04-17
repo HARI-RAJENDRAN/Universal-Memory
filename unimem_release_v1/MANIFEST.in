@@ -1,0 +1,7 @@
+exclude *.db
+exclude *.pyc
+prune __pycache__
+prune examples
+prune scripts
+exclude docker-compose.yml
+exclude chatbot.py
