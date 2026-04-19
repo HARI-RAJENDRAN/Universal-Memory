@@ -864,15 +864,253 @@ pre {
     transform: translateY(0);
 }
 
-/* Responsive constraints */
+/* =============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================= */
+
+/* --- Tablet: ≤900px --- */
 @media (max-width: 900px) {
+
+    /* Nav: hide full dropdown, show only logo + Docs */
+    .nav-dropdown {
+        display: none;
+    }
+    .nav-links {
+        gap: 1.2rem;
+    }
+
+    /* Hero */
+    .hero-title {
+        font-size: 2.8rem;
+        letter-spacing: -1px;
+    }
+    .hero-subtitle {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    /* Code Demo: stack vertically */
     .demo-container {
         grid-template-columns: 1fr;
+        text-align: left;
+        gap: 2rem;
+    }
+    .text-content {
+        text-align: left;
+    }
+
+    /* Features grid: 2 columns */
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Interactive demo: stack panels */
+    .demo-ui-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .memories-panel {
+        min-height: unset;
+    }
+
+    /* Usecase tabs: wrap */
+    .usecase-tabs {
+        flex-wrap: wrap;
+        gap: 0.6rem;
+    }
+    .tab-btn {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+    }
+    .usecase-title {
+        font-size: 1.6rem;
+    }
+
+    /* Footer */
+    .footer-content h2 {
+        font-size: 2rem;
+    }
+}
+
+/* --- Mobile Landscape: ≤640px --- */
+@media (max-width: 640px) {
+
+    body {
+        font-size: 1rem;
+    }
+
+    /* Nav */
+    .navbar {
+        padding: 1rem 0;
+    }
+    .nav-container {
+        padding: 0 1.2rem;
+    }
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 7rem 1.2rem 3rem;
     }
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.1rem;
+        letter-spacing: -0.5px;
     }
-    .nav-links a:not(.btn-primary) {
-        display: none;
+    .hero-subtitle {
+        font-size: 0.95rem;
+        padding: 0;
+    }
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .btn {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    /* Code Demo section */
+    .demo-section {
+        padding: 4rem 1.2rem;
+    }
+    .code-window {
+        font-size: 0.78rem;
+    }
+
+    /* Features */
+    .features-section {
+        padding: 4rem 1.2rem;
+    }
+    .grid-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .glass-card {
+        padding: 1.5rem;
+    }
+
+    /* Demo UI section */
+    .demo-ui-section {
+        padding: 3rem 1rem;
+    }
+    .demo-ui-wrapper {
+        max-width: 100% !important;
+    }
+    /* Stack panels vertically, compact sizes */
+    .demo-ui-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .chat-panel {
+        min-height: 200px;
+        padding: 1rem;
+    }
+    .memories-panel {
+        padding: 1rem;
+        gap: 0.8rem;
+    }
+    .memories-panel h3 {
+        font-size: 0.95rem;
+        margin-bottom: 0.2rem;
+    }
+    .memory-card {
+        padding: 0.7rem 0.9rem;
+    }
+    .memory-text {
+        font-size: 0.82rem;
+        margin-bottom: 0.4rem;
+    }
+    .memory-meta {
+        font-size: 0.7rem;
+    }
+    /* Hide SVG connector line — doesn't work on stacked layout */
+    #connectionLine {
+        display: none !important;
+    }
+    .chat-messages {
+        gap: 0.7rem;
+        margin-bottom: 1rem;
+    }
+    .message {
+        max-width: 90%;
+        font-size: 0.88rem;
+        padding: 0.6rem 0.9rem;
+    }
+    .system-msg {
+        padding: 0.4rem 0;
+        font-size: 0.88rem;
+    }
+    .btn-green {
+        width: 100%;
+        font-size: 0.95rem;
+        padding: 0.75rem 1.5rem;
+    }
+
+    /* Usecase tabs: full-width pill rows */
+    .usecase-tabs {
+        gap: 0.5rem;
+    }
+    .tab-btn {
+        font-size: 0.8rem;
+        padding: 0.45rem 0.8rem;
+    }
+    .usecase-title {
+        font-size: 1.35rem;
+        margin-bottom: 1.2rem !important;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 4rem 1.2rem 2rem;
+    }
+    .footer-content h2 {
+        font-size: 1.6rem;
+        letter-spacing: -0.5px;
+    }
+}
+
+/* --- Mobile Portrait: ≤480px --- */
+@media (max-width: 480px) {
+
+    .hero-title {
+        font-size: 1.75rem;
+    }
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    /* Reduce blob sizes so they don't overflow */
+    .blob {
+        width: 300px;
+        height: 300px;
+        filter: blur(80px);
+    }
+
+    .section-title h2,
+    .footer-content h2 {
+        font-size: 1.4rem;
+    }
+
+    /* Dropdown panel in nav: full width fallback */
+    .dropdown-content {
+        min-width: 90vw;
+        left: -60px;
+        transform: none;
+    }
+
+    .usecase-title {
+        font-size: 1.15rem;
+    }
+
+    /* Memory cards tighter */
+    .memory-card {
+        padding: 0.8rem;
+    }
+    .memory-text {
+        font-size: 0.85rem;
     }
 }
